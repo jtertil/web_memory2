@@ -1,0 +1,43 @@
+.game-board {
+  margin:30px auto;
+  position: relative;
+  background: #fff
+  overflow: hidden;
+  width: 650px;
+  height: 650px;
+  border: 2px solid #ddd;
+}
+
+.game-card {
+  position: absolute;
+  cursor: pointer;
+  width: 150px;
+  height: 150px;
+  background-color: #f6da17;
+  background-image : url(../IMG/title.png);
+  background-repeat: no-repeat;
+  background-position: center;
+
+}
+
+.game-card:hover {
+    background-color:#F7C11A;
+}
+
+.game-score {
+  text-align: center;
+}
+
+.game-start {
+  padding: 0.8em 3em;
+  background: #F15C5C;
+  color: #FFF;
+  border: 0;
+  font-weight: bold;
+  border-radius: 4px;
+  transition: 0.5s background-color, 0.5s box-shadow;
+  cursor: pointer;
+  display: block;
+  font-size: 20px;
+  margin:30px auto;
+}
