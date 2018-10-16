@@ -70,7 +70,7 @@ const memory2 = {
     this.divBoard.innerHTML = '';
     this.backgroundNo = Math.floor(Math.random()*6)+1;
     this.divBackground = document.querySelector('.game-background');
-    this.divBackground.style.backgroundImage = ('url(IMG/background_'+this.backgroundNo+'.png)');
+    this.divBackground.style.backgroundImage = ('url(IMG/background_'+this.backgroundNo+'.jpg)');
 
     // clear variables
     this.cards = [];

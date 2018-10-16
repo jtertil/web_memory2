@@ -7,6 +7,7 @@
   border-radius: 10px;
   text-align: center;
   line-height: 650px;
+  color: red;
   font-family: 'Lobster', cursive;
   font-size: 48px;
 
@@ -52,7 +53,7 @@
 }
 .game-background {
   height: 850px;
-  background-image: url(../IMG/background_1.png);
+  background-image: url(../IMG/background_1.jpg);
   background-size: cover;
   background-repeat: no-repeat;
 }
