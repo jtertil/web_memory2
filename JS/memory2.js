@@ -15,8 +15,6 @@ const memory2 = {
         'IMG/title_6.png',
         'IMG/title_7.png',
         'IMG/title_8.png',
-        'IMG/title_9.png',
-        'IMG/title_10.png',
     ],
     canGet : true, //card click lock
     pairs : 0, //card pairs
@@ -38,7 +36,6 @@ const memory2 = {
         }
 
         this.moves++;
-        this.divScore.innerHTML = this.moves;
 
       }
     }
@@ -53,7 +50,9 @@ const memory2 = {
 
     this.pairs++
     if (this.pairs >= this.cardCount /2) {
-      alert('Game Over!')
+        this.divBoard.innerHTML = 'Done in '+this.moves+' moves!';
+        this.button.innerHTML = 'Play again!'
+
     }
   },
 
@@ -69,10 +68,9 @@ const memory2 = {
     // clear game board
     this.divBoard = document.querySelector('.game-board');
     this.divBoard.innerHTML = '';
-
-    // clear score record
-    this.divScore = document.querySelector('.game-score');
-    this.divScore.innerHTML = '';
+    this.backgroundNo = Math.floor(Math.random()*6)+1;
+    this.divBackground = document.querySelector('.game-background');
+    this.divBackground.style.backgroundImage = ('url(IMG/background_'+this.backgroundNo+'.png)');
 
     // clear variables
     this.cards = [];
@@ -81,7 +79,13 @@ const memory2 = {
     this.canGet = true;
     this.pairs = 0;
 
+    // modify button
+    this.button = document.querySelector('.game-start')
+    this.button.innerHTML = 'Restart game!'
+
     //create gameboard
+    this.divBoard.style.border = "5px solid red";
+
     for (let i=0; i<this.cardCount; i++) {
         this.cards.push(Math.floor(i/2));
     }
@@ -91,7 +95,7 @@ const memory2 = {
         const swap = Math.floor(Math.random()*i);
         const tmp = this.cards[i];
         this.cards[i] = this.cards[swap];
-        this.cards[swap] = tmp
+        this.cards[swap] = tmp;
     }
 
     for (let i=0; i<this.cardCount; i++){

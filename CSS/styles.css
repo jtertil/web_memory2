@@ -1,20 +1,15 @@
-.game {
-  background-image: url(../IMG/background.png);
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center center;
-}
-
 .game-board {
-
-  margin:30px auto;
+  margin: auto;
   position: relative;
-  background: white
-  overflow: hidden;
+  top: 15px;
   width: 650px;
   height: 650px;
-  border: 2px solid white;
-  border-radius: 4px
+  border-radius: 10px;
+  text-align: center;
+  line-height: 650px;
+  font-family: 'Lobster', cursive;
+  font-size: 48px;
+
 }
 
 .game-card {
@@ -25,8 +20,7 @@
   background-image : url(../IMG/title.png);
   background-repeat: no-repeat;
   background-position: center;
-  border-radius: 4px
-
+  border-radius: 5px
 
 }
 
@@ -39,15 +33,26 @@
 }
 
 .game-start {
-  padding: 0.8em 3em;
-  background: #F15C5C;
-  color: #FFF;
+  padding: 15px;
+  background: red;
+  color: black;
   border: 0;
-  font-weight: bold;
-  border-radius: 4px;
-  transition: 0.5s background-color, 0.5s box-shadow;
+  font-family: 'Lobster', cursive;
+  border: 2px solid black;
+  border-radius: 10px;
   cursor: pointer;
   display: block;
-  font-size: 20px;
-  margin:30px auto;
+  font-size: 28px;
+  margin: 80px auto;
+}
+
+.game-start:hover{
+  filter: brightness(125%);
+
+}
+.game-background {
+  height: 850px;
+  background-image: url(../IMG/background_1.png);
+  background-size: cover;
+  background-repeat: no-repeat;
 }
