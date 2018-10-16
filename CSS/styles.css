@@ -1,11 +1,20 @@
+.game {
+  background-image: url(../IMG/background.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
 .game-board {
+
   margin:30px auto;
   position: relative;
-  background: #fff
+  background: white
   overflow: hidden;
   width: 650px;
   height: 650px;
-  border: 2px solid #ddd;
+  border: 2px solid white;
+  border-radius: 4px
 }
 
 .game-card {
@@ -13,15 +22,16 @@
   cursor: pointer;
   width: 150px;
   height: 150px;
-  background-color: #f6da17;
   background-image : url(../IMG/title.png);
   background-repeat: no-repeat;
   background-position: center;
+  border-radius: 4px
+
 
 }
 
 .game-card:hover {
-    background-color:#F7C11A;
+  filter: brightness(125%);
 }
 
 .game-score {
