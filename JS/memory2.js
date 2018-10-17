@@ -30,7 +30,7 @@ const memory2 = {
         this.canGet = false;
 
         if (this.cardsChecked[0].dataset.cardType === this.cardsChecked[1].dataset.cardType) {
-          setTimeout(this.deleteCards.bind(this), 1000);
+          setTimeout(this.deleteCards.bind(this), 500);
         } else {
           setTimeout(this.resetCards.bind(this), 1500);
         }
