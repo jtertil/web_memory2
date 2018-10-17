@@ -7,14 +7,14 @@ const memory2 = {
   cardsChecked : [], //checked cards
   moves : 0, //number of moves
   cardsImg : [ // cards images
-        'IMG/title_1.png',
-        'IMG/title_2.png',
-        'IMG/title_3.png',
-        'IMG/title_4.png',
-        'IMG/title_5.png',
-        'IMG/title_6.png',
-        'IMG/title_7.png',
-        'IMG/title_8.png',
+        'IMG/title_1.jpg',
+        'IMG/title_2.jpg',
+        'IMG/title_3.jpg',
+        'IMG/title_4.jpg',
+        'IMG/title_5.jpg',
+        'IMG/title_6.jpg',
+        'IMG/title_7.jpg',
+        'IMG/title_8.jpg',
     ],
     canGet : true, //card click lock
     pairs : 0, //card pairs
@@ -30,9 +30,9 @@ const memory2 = {
         this.canGet = false;
 
         if (this.cardsChecked[0].dataset.cardType === this.cardsChecked[1].dataset.cardType) {
-          setTimeout(this.deleteCards.bind(this), 500);
+          setTimeout(this.deleteCards.bind(this), 1000);
         } else {
-          setTimeout(this.resetCards.bind(this), 1000);
+          setTimeout(this.resetCards.bind(this), 1500);
         }
 
         this.moves++;
@@ -50,6 +50,8 @@ const memory2 = {
 
     this.pairs++
     if (this.pairs >= this.cardCount /2) {
+        this.divBackground = document.querySelector('.game-background');
+        this.divBackground.style.backgroundImage = ('url(IMG/background_win.jpg)');
         this.divBoard.innerHTML = 'Done in '+this.moves+' moves!';
         this.button.innerHTML = 'Play again!'
 
@@ -57,8 +59,8 @@ const memory2 = {
   },
 
   resetCards : function() {
-    this.cardsChecked[0].style.backgroundImage = 'url(IMG/title.png)';
-    this.cardsChecked[1].style.backgroundImage = 'url(IMG/title.png)';
+    this.cardsChecked[0].style.backgroundImage = 'url(IMG/title.jpg)';
+    this.cardsChecked[1].style.backgroundImage = 'url(IMG/title.jpg)';
 
     this.cardsChecked = [];
     this.canGet = true;
@@ -68,9 +70,7 @@ const memory2 = {
     // clear game board
     this.divBoard = document.querySelector('.game-board');
     this.divBoard.innerHTML = '';
-    this.backgroundNo = Math.floor(Math.random()*6)+1;
-    this.divBackground = document.querySelector('.game-background');
-    this.divBackground.style.backgroundImage = ('url(IMG/background_'+this.backgroundNo+'.jpg)');
+
 
     // clear variables
     this.cards = [];
@@ -78,13 +78,16 @@ const memory2 = {
     this.moves = 0;
     this.canGet = true;
     this.pairs = 0;
+    this.backgroundNo = 0;
 
     // modify button
     this.button = document.querySelector('.game-start')
     this.button.innerHTML = 'Restart game!'
 
     //create gameboard
-    this.divBoard.style.border = "5px solid red";
+    this.backgroundNo = Math.floor(Math.random()*6)+1;
+    this.divBackground = document.querySelector('.game-background');
+    this.divBackground.style.backgroundImage = ('url(IMG/background_'+this.backgroundNo+'.jpg)');
 
     for (let i=0; i<this.cardCount; i++) {
         this.cards.push(Math.floor(i/2));
