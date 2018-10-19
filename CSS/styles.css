@@ -3,9 +3,8 @@ body {
 }
 
 .game-board {
-  margin: auto;
   position: relative;
-  top: 15px;
+  margin: auto;
   width: 650px;
   height: 650px;
   border-radius: 10px;
@@ -14,9 +13,6 @@ body {
   color: red;
   font-family: 'Lobster', cursive;
   font-size: 48px;
-
-
-
 }
 
 .game-card {
@@ -25,34 +21,26 @@ body {
   width: 150px;
   height: 150px;
   background-image : url(../IMG/title.jpg);
-  background-repeat: no-repeat;
-  background-position: center;
   border-radius: 5px;
   filter: drop-shadow(0px 1px 3px #000);
-  transition: : 0.5s;
-
+  transition: 0.5s;
 }
 
 .game-card:hover {
   filter: brightness(115%) drop-shadow(0px 1px 5px #000);
 }
 
-.game-score {
-  text-align: center;
-}
-
 .game-start {
-  padding: 15px;
+  padding: 5px;
   background: red;
   color: black;
-  border: 0;
   font-family: 'Lobster', cursive;
   border: 2px solid black;
   border-radius: 10px;
   cursor: pointer;
   display: block;
-  font-size: 28px;
-  margin: 80px auto;
+  font-size: 24px;
+  margin: 10px auto;
   filter: drop-shadow(0px 1px 3px #000);
 }
 
@@ -68,7 +56,6 @@ body {
   margin: 0px;
   height: 1080px;
   background: url(../IMG/background_0.jpg)no-repeat center center fixed;
-  background-size: cover;
-  transition: 1s;
-
+	background-size: cover;
+  transition: background-image 1s;
 }

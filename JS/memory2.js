@@ -2,7 +2,6 @@ const memory2 = {
   cardCount : 16, //number of cards
   cardsOnRow : 4, //number of cards in one cardsOnRow
   divBoard : null, //game board
-  divScore :null, //game divScore
   cards : [], //rendomized cards
   cardsChecked : [], //checked cards
   moves : 0, //number of moves
@@ -28,15 +27,12 @@ const memory2 = {
 
       if (this.cardsChecked.length === 2) {
         this.canGet = false;
-
         if (this.cardsChecked[0].dataset.cardType === this.cardsChecked[1].dataset.cardType) {
           setTimeout(this.deleteCards.bind(this), 500);
         } else {
           setTimeout(this.resetCards.bind(this), 1500);
         }
-
         this.moves++;
-
       }
     }
   },
@@ -50,7 +46,6 @@ const memory2 = {
 
     this.pairs++
     if (this.pairs >= this.cardCount /2) {
-        this.divBackground = document.querySelector('.game-background');
         this.divBackground.style.backgroundImage = ('url(IMG/background_win.jpg)');
         this.divBoard.innerHTML = 'Done in '+this.moves+' moves!';
         this.button.innerHTML = 'Play again!'
